@@ -31,11 +31,11 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     templateUrl: 'templates/menu.html',
     controller: 'AppCtrl'
   })
-  .state('app.browse', {
-      url: '/browse',
+  .state('app.player', {
+      url: '/player',
       views: {
         'menuContent': {
-          templateUrl: 'templates/browse.html'
+          templateUrl: 'templates/player.html'
         }
       }
     })
