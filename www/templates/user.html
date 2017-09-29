@@ -1,0 +1,35 @@
+<ion-view view-title="{{user.login}}">
+  <ion-content>
+<div class="item item-image">
+  <img src="{{user.avatar_url}}">
+</div>
+    <ion-list>
+      <ion-item>id: {{user.id}}</ion-item>
+      <ion-item>login: {{user.login}}</ion-item>
+      <ion-item>GitHub page:
+        <a href="{{user.html_url}}">
+          {{user.html_url}}
+        </a>
+      </ion-item>
+      <ion-item>type: {{user.type}}</ion-item>
+      <ion-item>site_admin: {{user.site_admin}}</ion-item>
+      <ion-item>name: {{user.name}}</ion-item>
+      <ion-item>company: {{user.company}}</ion-item>
+      <ion-item>blog:
+        <a href="{{user.blog}}">
+        {{user.blog}}
+      </a></ion-item>
+      <ion-item>location: {{user.location}}</ion-item>
+      <ion-item>email: {{user.email}}</ion-item>
+      <ion-item>hireable: {{user.hireable}}</ion-item>
+      <ion-item>bio: {{user.bio}}</ion-item>
+      <ion-item>public_repos: {{user.public_repos}}</ion-item>
+      <ion-item>public_gists: {{user.public_gists}}</ion-item>
+      <ion-item>followers: {{user.followers}}</ion-item>
+      <ion-item>following: {{user.following}}</ion-item>
+      <ion-item>created_at: {{user.created_at}}</ion-item>
+      <ion-item>updated_at: {{user.updated_at}}</ion-item>
+    </ion-list>
+
+  </ion-content>
+</ion-view>
