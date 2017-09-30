@@ -1,21 +1,38 @@
-<ion-modal-view>
+<ion-modal-view xmlns="http://www.w3.org/1999/html">
   <ion-header-bar>
     <h1 class="title">Register</h1>
     <div class="buttons">
-      <button class="button button-clear" ng-click="closeRegister()">Close</button>
+      <button class="button" ng-click="closeRegister()">Close</button>
     </div>
   </ion-header-bar>
   <ion-content>
-    <form ng-submit="doRegister()">
+    <form name="registerForm" ng-submit="doRegister(registerForm.$valid)">
       <div class="list">
         <label class="item item-input">
           <span class="input-label">Username</span>
-          <input type="text" ng-model="registerData.username">
+          <input name="userName" type="text" ng-model="registerData.username" required>
         </label>
+        <span class="error-message" ng-show="registerForm.userName.$touched && registerForm.userName.$invalid">The name is required.</span>
+
+        <label class="item item-input">
+          <span class="input-label">Email</span>
+          <input name="email" type="email" ng-model="registerData.email" required>
+        </label>
+        <span class="error-message" ng-show="registerForm.email.$touched && registerForm.email.$invalid">The email is required.</span>
+
         <label class="item item-input">
           <span class="input-label">Password</span>
-          <input type="password" ng-model="registerData.password">
+          <input name="password" type="password" ng-model="registerData.password" required>
         </label>
+        <span class="error-message" ng-show="registerForm.password.$touched && registerForm.password.$invalid">The password is required.</span>
+
+        <label class="item item-input">
+          <span class="input-label">Confirm password</span>
+          <input name="confirmPassword" type="password" ng-model="registerData.confirmPassword" required ng-pattern="registerData.password">
+        </label>
+        <span class="error-message" ng-show="registerForm.confirmPassword.$touched && registerForm.confirmPassword.$invalid">The password is required</span></br>
+        <span class="error-message" ng-show="registerData.password !== registerData.confirmPassword">The password should match</span>
+
         <label class="item">
           <button class="button button-block button-positive" type="submit">Register</button>
         </label>
