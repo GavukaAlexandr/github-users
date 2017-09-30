@@ -1,17 +1,10 @@
 <ion-view view-title="Users">
   <ion-content>
-
     <div class="list">
       <a class="item item-avatar" ng-repeat="user in users" ui-sref="app.user({userId: user.id})">
-        <img src="{{user.avatar_url}}">
+        <img ng-src="{{user.avatar_url}}">
         <h2>{{user.login}}</h2>
       </a>
     </div>
-
-    <!--<ion-list>-->
-      <!--<ion-item ng-repeat="user in users" ui-sref="app.user({userId: user.id})">-->
-        <!--{{user.login}}-->
-      <!--</ion-item>-->
-    <!--</ion-list>-->
   </ion-content>
 </ion-view>

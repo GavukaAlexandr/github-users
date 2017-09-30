@@ -75,5 +75,19 @@ angular.module('starter.controllers', [])
         })
     }])
 
-.controller('PlaylistCtrl', function ($scope, $stateParams) {
+.directive('hls', function () {
+    return {
+        restrict: 'E',
+        template: '<video class="player" controls></video>',
+        replace: true,
+        link: function (scope, el) {
+            var video = el[0];
+            var hls = new Hls();
+            hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
+            hls.attachMedia(video);
+            hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                // video.play();
+            });
+        }
+    }
 });
